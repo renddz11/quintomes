@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>No presiones en el corazón ❤️</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#fbe4ec;
+  font-family:"Georgia", serif;
+}
+.container{
+  position:relative;
+  text-align:center;
+}
+.heart{
+  font-size:220px; 
+  cursor:pointer;
+  animation:latido 1s infinite;
+  position:relative;
+  display:inline-block;
+  user-select:none;
+}
+.heart span{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:28px;
+  font-weight:bold;
+  color:white;
+  text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  pointer-events:none;
+}
+@keyframes latido{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+  100%{transform:scale(1);}
+}
+.carta{
+  display:none;
+  width:380px;
+  background:#fffdf7;
+  padding:35px 25px;
+  border-radius:10px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.25);
+  text-align:left;
+  line-height:1.6;
+  position:relative;
+}
+.cerrar{
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:22px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.abierta .carta{
+  display:block;
+}
+.abierta .heart{
+  display:none;
+}
+h2{
+  text-align:center;
+  margin-top:0;
+}
+</style>
+</head>
+<body>
+<div class="container" id="box">
+  <!-- ❤️ CORAZON -->
+  <div class="heart" onclick="abrirCarta()">
+    ❤️
+    <span>NO PULSES AQUÍ</span>
+  </div>
+  <!-- 💌 CARTA -->
+  <div class="carta">
+    <div class="cerrar" onclick="cerrarCarta()">✖</div>
+    <h2>Te dije que no lo hicieras, nako 💌</h2>
+    <p>
+      Mi amorcito lindo,
+      <br><br>
+      Necesito decirte algo que llevo guardado en mi corazón.
+      Sí, ese que te dije que no pulsaras, nake.
+     Es que eres un neciote, ash.
+      <br><br>
+      Mentira, eres el amor de mi vida, mi sol en los días nublados y mi alegría constante. Cada vez que veo tu sonrisa, siento que el mundo se detiene por un momento y solo existimos tú y yo.
+      <br><br>
+     Te amo.
+    </p>
+  </div>
+</div>
+<script>
+function abrirCarta(){
+  document.getElementById("box").classList.add("abierta");
+}
+function cerrarCarta(){
+  document.getElementById("box").classList.remove("abierta");
+}
+</script>
+</body>
+</html>
